@@ -43,7 +43,7 @@ const SavedBooks = () => {
           const userDataCache = data.me;
           const savedBooksCache = userDataCache.savedBooks;
           const updatedBookCache = savedBooksCache.filter(
-            (book) => book.bookId !== bookId
+            (bookData) => bookData.bookId !== bookId
           );
           data.me.savedBooks = updatedBookCache;
           cache.writeQuery({
@@ -73,7 +73,7 @@ const SavedBooks = () => {
       </Jumbotron>
       <Container>
         <h2>
-          {userData.savedBooks.length
+          {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? "book" : "books"
               }:`

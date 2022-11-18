@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
 // import { createUser } from '../utils/API';
@@ -14,7 +14,15 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
   // ADD_USER mutation functionality
-  const [createUser] = useMutation(ADD_USER);
+  const [createUser, { error }] = useMutation(ADD_USER);
+
+    useEffect(() => {
+      if (error) {
+        setShowAlert(true);
+      } else {
+        setShowAlert(false);
+      }
+    }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +44,7 @@ const SignupForm = () => {
       const { data } = await createUser({
         variables: { ...userFormData }
       });
-
+      console.log(data);
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);

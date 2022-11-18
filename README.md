@@ -23,6 +23,14 @@ To deploy the text editor, follow this [link](https://mern-book-find.herokuapp.c
 
 To deploy from VS Code, clone the [repo](https://github.com/jmotto/Book-Find), install the dependencies, run the command `npm run develop`.
 
+* Sign Up by clicking "Login/Sign Up" at top right corner.
+* Search for any book 
+* Click the "Save this Book!" button to add to your book list
+* To view your books click "See Your Books" in navbar
+* To delete books click "delete this book" button
+* Logout using "Logout" button in navbar
+
+![Book-List](client/public/mern-book-find.herokuapp.com_.png)
 
 
 ## License

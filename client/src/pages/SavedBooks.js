@@ -36,31 +36,17 @@ const SavedBooks = () => {
     }
 
     try {
-      await removeBook({
-        variables: { bookId: bookId },
-        update: (cache) => {
-          const data = cache.readQuery({ query: GET_ME });
-          const userDataCache = data.me;
-          const savedBooksCache = userDataCache.savedBooks;
-          const updatedBookCache = savedBooksCache.filter(
-            (bookData) => bookData.bookId !== bookId
-          );
-          data.me.savedBooks = updatedBookCache;
-          cache.writeQuery({
-            query: GET_ME,
-            data: { data: { ...data.me.savedBooks } },
-          });
-        },
+      const { data } = await removeBook({
+        variables: { bookId },
       });
+
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
-      window.location.reload();
     } catch (err) {
       console.error(err);
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }

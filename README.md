@@ -1,9 +1,8 @@
 # Book Find: Book Search Engine
 
 [Deployed Application](https://mern-book-find.herokuapp.com/)
-## Description
 
-This Google Books API search engine built with a RESTful API, was refactor to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. Apollo Server was setup to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API. The existing authentication middleware was modified so that it works in the context of a GraphQL API. An Apollo Provider was created so that requests can communicate with an Apollo Server.
+This Google Books API search engine built with a RESTful API, was refactored to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. Apollo Server was setup to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API. The existing authentication middleware was modified so that it works in the context of a GraphQL API. An Apollo Provider was created so that requests can communicate with an Apollo Server.
 
 
 ## Table of Contents

@@ -1,4 +1,4 @@
-# 21 MERN: Book Search Engine
+# Book Find: Book Search Engine
 
 [Deployed Application](https://mern-book-find.herokuapp.com/)
 ## Description
